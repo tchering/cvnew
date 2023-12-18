@@ -3,6 +3,7 @@
   --blue: #3e5fc7;
   --green: #568203;
   --white: white;
+  --grey:#E5E4E2;
 }
 
 .red-text {
@@ -36,17 +37,25 @@
 }
 
 .nav-link::after {
-  content: "";
-  position: absolute;
-  bottom: 3px;
-  left: 0;
-  width: 100%;
-  height: 3px;
-  background: var(--green);
-  margin-top: 5px; /* Add a 5px gap to the content */
-  transition: all 0.3s ease-in-out;
-  transform: scale(0);
-}
+    content: "";
+    position: absolute;
+    bottom: 3px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: var(--blue);
+    margin-top: 5px; /* Add a 5px gap to the content */
+    transition: all 0.3s ease-in-out;
+    transform: scale(0);
+  }
+  
+  @media (max-width: 991px) {
+    .nav-link::after {
+      width:18%;
+        left: 41%;
+    }
+  }
+
 
 .nav-link:hover::after {
   transform: scale(1);
@@ -57,20 +66,44 @@
   margin-left: 4px;
 }
 
+/*! This is css for hover effect in nav-items */
+.nav-item:hover .nav-link {
+  color: var(--blue);
+  transform: scale(1.2);
+  transition: .3s;
+}
+
+
+
 .intro-row {
   margin-top: 20px;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
   align-items: center;
-  margin-right: 10px;
+  /* margin-right: 10px; */
 }
 button {
   width: 10rem;
   outline: none;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+  box-shadow: 4px 7px 10px rgba(0, 0, 0, 0.25);
 }
+
 #img {
   border: 2px solid black;
   border-radius: 10px;
   box-shadow: 4px 10px 15px black;
+}
+
+
+
+/*! This is css for section competence */
+#competence{
+    margin: 4rem 0 3rem 0;
+    background: var(--grey);
+}
+
+#competence{
+    min-height: 50vh;
+    display: flex;
+    align-items: center;
 }
