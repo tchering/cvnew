@@ -1,0 +1,13 @@
+#nav-content::after{
+    content: "";
+    height: 4px;
+    width: 100%;
+    background-color: rgb(211, 31, 31);
+    left: 0;
+    bottom: 0px;
+    position: absolute;
+}
+
+#navbarNavAltMarkup{
+    position: relative;
+}
