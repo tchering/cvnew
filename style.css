@@ -1,13 +1,76 @@
-#nav-content::after{
-    content: "";
-    height: 4px;
-    width: 100%;
-    background-color: rgb(211, 31, 31);
-    left: 0;
-    bottom: 0px;
-    position: absolute;
+:root {
+  --red: #c73e3e;
+  --blue: #3e5fc7;
+  --green: #568203;
+  --white: white;
 }
 
-#navbarNavAltMarkup{
-    position: relative;
+.red-text {
+  color: var(--red);
+}
+.white-text {
+  color: var(--white);
+}
+.white-bg {
+  background-color: var(--white);
+}
+
+.blue-text {
+  color: var(--blue);
+}
+
+.green-text {
+  color: var(--green);
+}
+
+.red-bg {
+  background-color: var(--red);
+}
+
+.blue-bg {
+  background-color: var(--blue);
+}
+
+.green-bg {
+  background-color: var(--green);
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: 3px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: var(--green);
+  margin-top: 5px; /* Add a 5px gap to the content */
+  transition: all 0.3s ease-in-out;
+  transform: scale(0);
+}
+
+.nav-link:hover::after {
+  transform: scale(1);
+}
+
+.nav-item {
+  position: relative;
+  margin-left: 4px;
+}
+
+.intro-row {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-right: 10px;
+}
+button {
+  width: 10rem;
+  outline: none;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+}
+#img {
+  border: 2px solid black;
+  border-radius: 10px;
+  box-shadow: 4px 10px 15px black;
 }
