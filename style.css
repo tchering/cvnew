@@ -199,7 +199,7 @@ button {
 }
 .form-container {
   margin: 2rem;
-  min-height: 40vh;
+  height: 40vh;
   /* width: 30vw; */
   background-color: lightgrey;
   border-radius: 10px;
@@ -240,6 +240,5 @@ button {
   }
   .inner-container {
     height: 70%;
-    display: none;
   }
 }
