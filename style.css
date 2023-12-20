@@ -1,3 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@700&family=Josefin+Sans:wght@200&family=Montserrat:ital,wght@0,300;0,500;1,200;1,400&family=Roboto:wght@300;400&display=swap');
+
+*{
+font-family: 'Roboto', sans-serif;
+}
+
 :root {
   --red: #c73e3e;
   --blue: #3e5fc7;
@@ -194,7 +200,7 @@ button {
 .form-container{
   margin: 2rem;
   min-height: 40vh;
-  width: 30vw;
+  /* width: 30vw; */
   background-color:lightgrey;
   border-radius: 10px;
   /* create box shadow */
@@ -203,4 +209,33 @@ button {
 
 .w70{
   width: 70%;
+}
+.message{
+  color: var(--blue);
+  /* text-shadow: 1px 1px 2px black; */
+}
+
+.form-control::placeholder {
+  transition: transform 0.3s ease;
+}
+
+.form-control:focus::placeholder {
+  transform: translateY(-40px);
+}
+
+/* footer section */
+.social-logo{
+  gap: 20px;
+}
+
+@media screen and (max-width:450px){
+  .experience-list>ul {
+    list-style-type: none;
+  }
+  .formation{
+    list-style-type: none;
+  }
+  .social-logo{
+    margin-top: 4rem;
+  }
 }
