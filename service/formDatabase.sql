@@ -1,9 +1,10 @@
+-- Active: 1702969265829@@127.0.0.1@3306@form
 CREATE DATABASE IF NOT EXISTS form;
 USE form;
 
-CREATE TABLE IF NOT EXISTS form_data (
-    id INT PRIMARY KEY AUTO_INCREMENT,
-    name VARCHAR(255) NOT NULL,
-    email VARCHAR(255) NOT NULL,
-    message VARCHAR(255) NOT NULL
-);
+     CREATE or REPLACE TABLE form_data (
+                    id INT AUTO_INCREMENT PRIMARY KEY,
+                    nom VARCHAR(255),
+                    email VARCHAR(255),
+                    message TEXT
+                );
