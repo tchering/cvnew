@@ -172,6 +172,28 @@ button {
 
 /* This is css section for formation */
 #formation{
-  margin: 4rem 0 3rem 0;
     background: var(--grey);
+}
+
+
+.intro-row,.graphic,#experience-list,#experience-title{
+  margin-top: 5rem;
+}
+
+#formation-title,#formation-list{
+  margin-top: 3rem;
+}
+
+/*! This is css for form section */
+
+.form{
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+}
+.form-container{
+  margin: 2rem;
+  min-height: 40vh;
+  width: 70vw;
+  background-color: var(--red);
 }
