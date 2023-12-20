@@ -37,7 +37,7 @@
                         <a class="nav-link" href="#formation">Diplome/Formation</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Contact</a>
+                        <a class="nav-link" href="#form">Contact</a>
                     </li>
                 </ul>
             </div>
@@ -186,7 +186,7 @@
             </div>
         </section>
         <section class="" id="formation">
-            <div class="row mx-5 d-flex justify-content-between" >
+            <div class="row mx-5 d-flex justify-content-between">
                 <div class="col-12 col-md-12 col-lg-4" id="formation-title">
                     <h3 class="text-center mt-5">Diplômes et Formations</h3>
                 </div>
@@ -232,8 +232,27 @@
             </div>
         </section>
         <section class="form">
-            <div class="form-container">
-                
+            <div class="form-container" id="form">
+                <h1 class="text-center">Message Me</h1>
+                <div class="inner-container">
+                    <div class="form">
+                        <div class="col">
+                            <input type="text" placeholder="Nom" id="nom" name="nom" class="w70 form-control">
+                        </div>
+                    </div>
+                    <div class="form">
+                        <div class="col">
+                            <input type="email" placeholder="Email" id="email" name="email" class="w70 form-control">
+                        </div>
+                    </div>
+                    <div class="form">
+                        <textarea maxlength="100" type="text" id="message" name="message" rows="2"
+                            class="form-control md-textarea w70" placeholder="Message"></textarea>
+                    </div>
+                </div>
+                <div class="btn-container mt-5 d-flex justify-content-center">
+                    <button class="btn blue-bg white-text fw-bold">Envoyer</button>
+                </div>
             </div>
         </section>
     </div>
