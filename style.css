@@ -107,3 +107,42 @@ button {
     display: flex;
     align-items: center;
 }
+
+/*! This is css for section experience */
+#intro{
+  display: none; 
+}
+
+.col{
+  display: flex;
+  justify-content: center;
+}
+/* should be removed later */
+.graphic{
+  position: relative;
+}
+
+.circle::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%; /* Add this line to center the circle horizontally */
+  transform: translateX(-50%); /* Add this line to center the circle horizontally */
+  width: 20px;
+  height: 20px;
+  background: var(--blue);
+  border-radius: 50%;
+  transition: all 0.3s ease-in-out;
+}
+
+.circle::after {
+  content: "";
+  position: absolute;
+  top: 20px; /* Add this line to position the line below the circle */
+  left: 0; /* Add this line to center the line horizontally */
+  transform: translateX(-50%); /* Add this line to center the line horizontally */
+  width: 2px;
+  height: 10rem; /* Adjust the height of the line as needed */
+  background: var(--blue);
+}
+
