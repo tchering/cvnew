@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@700&family=Josefin+Sans:wght@200&family=Montserrat:ital,wght@0,300;0,500;1,200;1,400&family=Roboto:wght@300;400&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@700&family=Josefin+Sans:wght@200&family=Montserrat:ital,wght@0,300;0,500;1,200;1,400&family=Roboto:wght@300;400&display=swap");
 
-*{
-font-family: 'Roboto', sans-serif;
+* {
+  font-family: "Roboto", sans-serif;
 }
 
 :root {
@@ -9,9 +9,8 @@ font-family: 'Roboto', sans-serif;
   --blue: #3e5fc7;
   --green: #568203;
   --white: white;
-  --grey:#E5E4E2;
+  --grey: #e5e4e2;
 }
-
 
 .red-text {
   color: var(--red);
@@ -43,36 +42,35 @@ font-family: 'Roboto', sans-serif;
   background-color: var(--green);
 }
 
-#nav-bar{
+#nav-bar {
   position: fixed;
   top: 0;
   width: 100%;
   z-index: 1;
 }
-.main{
+.main {
   margin-top: 5%;
 }
 
 .nav-link::after {
-    content: "";
-    position: absolute;
-    bottom: 3px;
-    left: 0;
-    width: 100%;
-    height: 3px;
-    background: var(--blue);
-    margin-top: 5px; /* Add a 5px gap to the content */
-    transition: all 0.3s ease-in-out;
-    transform: scale(0);
-  }
-  
-  @media (max-width: 991px) {
-    .nav-link::after {
-      width:18%;
-        left: 41%;
-    }
-  }
+  content: "";
+  position: absolute;
+  bottom: 3px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: var(--blue);
+  margin-top: 5px; /* Add a 5px gap to the content */
+  transition: all 0.3s ease-in-out;
+  transform: scale(0);
+}
 
+@media (max-width: 991px) {
+  .nav-link::after {
+    width: 18%;
+    left: 41%;
+  }
+}
 
 .nav-link:hover::after {
   transform: scale(1);
@@ -87,10 +85,8 @@ font-family: 'Roboto', sans-serif;
 .nav-item:hover .nav-link {
   color: var(--blue);
   transform: scale(1.2);
-  transition: .3s;
+  transition: 0.3s;
 }
-
-
 
 .intro-row {
   margin-top: 20px;
@@ -111,28 +107,26 @@ button {
   box-shadow: 4px 10px 15px black;
 }
 
-
-
 /*! This is css for section competence */
-#competence{
-    margin: 4rem 0 3rem 0;
-    background: var(--grey);
+#competence {
+  margin: 4rem 0 3rem 0;
+  background: var(--grey);
 }
 
-#competence{
-    min-height: 50vh;
-    display: flex;
-    align-items: center;
+#competence {
+  min-height: 50vh;
+  display: flex;
+  align-items: center;
 }
 
 /*! This is css for section experience */
 
-.col{
+.col {
   display: flex;
   justify-content: center;
 }
 /* should be removed later */
-.graphic{
+.graphic {
   position: relative;
 }
 
@@ -141,7 +135,9 @@ button {
   position: absolute;
   top: 0;
   left: 50%; /* Add this line to center the circle horizontally */
-  transform: translateX(-50%); /* Add this line to center the circle horizontally */
+  transform: translateX(
+    -50%
+  ); /* Add this line to center the circle horizontally */
   width: 20px;
   height: 20px;
   background: var(--blue);
@@ -164,53 +160,57 @@ button {
   position: absolute;
   top: 20px; /* Add this line to position the line below the circle */
   left: 0; /* Add this line to center the line horizontally */
-  transform: translateX(-50%); /* Add this line to center the line horizontally */
+  transform: translateX(
+    -50%
+  ); /* Add this line to center the line horizontally */
   width: 2px;
   height: 20%; /* Adjust the height of the line as needed */
   background: var(--blue);
 }
 
-
 .circle:hover::before {
   background: var(--red);
 }
- 
 
 /* This is css section for formation */
-#formation{
-    background: var(--grey);
+#formation {
+  background: var(--grey);
+  min-height: 70vh;
 }
 
-
-.intro-row,.graphic,#experience-list,#experience-title{
+.intro-row,
+.graphic,
+#experience-list,
+#experience-title {
   margin-top: 5rem;
 }
 
-#formation-title,#formation-list{
+#formation-title,
+#formation-list {
   margin-top: 3rem;
 }
 
 /*! This is css for form section */
 
-.form{
+.form {
   margin-top: 2rem;
   display: flex;
   justify-content: center;
 }
-.form-container{
+.form-container {
   margin: 2rem;
   min-height: 40vh;
   /* width: 30vw; */
-  background-color:lightgrey;
+  background-color: lightgrey;
   border-radius: 10px;
   /* create box shadow */
   box-shadow: 4px 10px 15px black;
 }
 
-.w70{
+.w70 {
   width: 70%;
 }
-.message{
+.message {
   color: var(--blue);
   /* text-shadow: 1px 1px 2px black; */
 }
@@ -224,18 +224,22 @@ button {
 }
 
 /* footer section */
-.social-logo{
+.social-logo {
   gap: 20px;
 }
 
-@media screen and (max-width:450px){
-  .experience-list>ul {
+@media screen and (max-width: 450px) {
+  .experience-list > ul {
     list-style-type: none;
   }
-  .formation{
+  .formation {
     list-style-type: none;
   }
-  .social-logo{
+  .social-logo {
     margin-top: 4rem;
+  }
+  .inner-container {
+    height: 70%;
+    display: none;
   }
 }

@@ -1,3 +1,9 @@
+<?php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,11 +13,11 @@
     <link rel="stylesheet" href="bootstrap-5.3.2-dist/css/bootstrap.css" />
     <link rel="stylesheet" href="fontawesome-free-6.5.0-web/css/all.css" />
     <link rel="stylesheet" href="style.css" />
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"
-        defer></script>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous" defer></script>
 
-    <title>Resume</title>
+    <title>Curriculum vitae</title>
 </head>
 
 <body>
@@ -20,9 +26,7 @@
             <a class="navbar-brand" href="#">
                 <h2 class="blue-text user-select-none ms-5">Sonam SHERPA</h2>
             </a>
-            <button class="navbar-toggler w-auto" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="">
+            <button class="navbar-toggler w-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -58,7 +62,7 @@
             </div>
         </section>
         <section class="" id="competence">
-            <div class="row mx-5  " id="competence-row">
+            <div class="row mx-5  " id="competence-row" data-aos="fade-up">
                 <div class="col-sm-12 col-md-12 col-lg-4" id="competence-col-left">
                     <div class="parcour">
                         <h3 class=" text-center" id="intro-parcour">Mon Parcours</h3>
@@ -105,7 +109,7 @@
             </div>
         </section>
         <section class="" id="experience">
-            <div class="row mx-5 d-flex justify-content-between">
+            <div class="row mx-5 d-flex justify-content-between" data-aos="fade-up">
                 <div class="col-12 col-md-12 col-lg-4" id="experience-title">
                     <h3 class="text-center">Expérience</h3>
                 </div>
@@ -186,7 +190,7 @@
             </div>
         </section>
         <section class="" id="formation">
-            <div class="row mx-5 d-flex justify-content-between">
+            <div class="row mx-5 d-flex justify-content-between" data-aos="fade-up">
                 <div class="col-12 col-md-12 col-lg-4" id="formation-title">
                     <h3 class="text-center mt-5">Diplômes et Formations</h3>
                 </div>
@@ -231,13 +235,13 @@
                 </div>
             </div>
         </section>
-        <section class="form">
+        <section class="form" data-aos="fade-up">
             <div class="form-container col-11 col-md-10 col-lg-4" id="form">
                 <h1 class="text-center message">Message Me</h1>
                 <div class="inner-container">
                     <div class="form">
                         <div class="col">
-                            <input type="text" placeholder="Nom" id="nom" name="nom" class="w70 form-control">
+                            <input type="text" id="nom" name="nom" class="w70 form-control" placeholder="Nom">
                         </div>
                     </div>
                     <div class="form">
@@ -246,13 +250,17 @@
                         </div>
                     </div>
                     <div class="form col-12">
-                        <textarea maxlength="100" type="text" id="message" name="message" rows="2"
-                            class="form-control md-textarea w70" placeholder="Message"></textarea>
+                        <textarea maxlength="1000" type="text" id="message" name="message" rows="2" class="form-control md-textarea w70" placeholder="Message"></textarea>
                     </div>
+                    <div class="form col-12">
+                        <p id="paragraph"></p>
+                    </div>
+
                 </div>
-                <div class="btn-container mt-4 d-flex justify-content-center">
-                    <button class="btn blue-bg white-text fw-bold" onclick="send()">Envoyer</button>
-                    <p id="alert"></p>
+                <div class="btn-container m-2 mt-md-5 mt-lg-1 d-flex justify-content-center">
+
+                    <button class="btn blue-bg white-text fw-bold mt-3" onclick="send()">Envoyer</button>
+
                 </div>
             </div>
         </section>
@@ -266,6 +274,41 @@
             </div>
         </section>
     </div>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            offset: 300,
+            duration: 800,
+            mirror: true,
+        });
+    </script>
 </body>
-<script src="service/function.php"></script>
+
 </html>
+
+<script>
+    let button = document.getElementById('close-btn');
+
+    function reload() {
+        location.reload();
+    }
+
+    function send() {
+        let xhr = new XMLHttpRequest();
+        xhr.open('POST', 'index.php?action=send');
+        let data = new FormData();
+        data.append('nom', nom.value);
+        data.append('email', email.value);
+        data.append('message', message.value);
+        xhr.send(data);
+        xhr.onload = () => {
+            if (xhr.status == 200) {
+                let response = xhr.responseText;
+                // alert('test');
+                paragraph.innerHTML = response;
+            } else {
+                alert('Request failed.  Returned status of ' + xhr.status);
+            }
+        }
+    }
+</script>
