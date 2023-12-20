@@ -160,3 +160,10 @@ button {
 .circle:hover::before {
   background: var(--red);
 }
+ 
+
+/* This is css section for formation */
+#formation{
+  margin: 4rem 0 3rem 0;
+    background: var(--grey);
+}
