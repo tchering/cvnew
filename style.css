@@ -133,6 +133,16 @@ button {
   background: var(--blue);
   border-radius: 50%;
   transition: all 0.3s ease-in-out;
+  animation: circleAnimation 1s infinite alternate; /* Add this line for animation */
+}
+
+@keyframes circleAnimation {
+  0% {
+    transform: translateX(-50%) scale(1);
+  }
+  100% {
+    transform: translateX(-50%) scale(1.2);
+  }
 }
 
 .circle::after {
@@ -142,7 +152,11 @@ button {
   left: 0; /* Add this line to center the line horizontally */
   transform: translateX(-50%); /* Add this line to center the line horizontally */
   width: 2px;
-  height: 10rem; /* Adjust the height of the line as needed */
+  height: 20%; /* Adjust the height of the line as needed */
   background: var(--blue);
 }
 
+
+.circle:hover::before {
+  background: var(--red);
+}
