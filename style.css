@@ -6,6 +6,7 @@
   --grey:#E5E4E2;
 }
 
+
 .red-text {
   color: var(--red);
 }
@@ -34,6 +35,16 @@
 
 .green-bg {
   background-color: var(--green);
+}
+
+#nav-bar{
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+}
+.main{
+  margin-top: 5%;
 }
 
 .nav-link::after {
@@ -109,9 +120,6 @@ button {
 }
 
 /*! This is css for section experience */
-#intro{
-  display: none; 
-}
 
 .col{
   display: flex;
