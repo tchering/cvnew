@@ -1,16 +1,18 @@
 <?php
-include("config/parametre.php");
-function connection($host = host, $dbname = dbname, $user = user, $password = password)
+// include("config/parametre.php");
+function connection()
 {
-    $dsn = "mysql:host=$host;dbname=$dbname;charset=utf8";
+    $dsn = "mysql:host={$_ENV['DB_HOST']};dbname={$_ENV['DB_DATABASE']};charset=utf8";
+
     try {
-        $connection = new PDO($dsn, $user, $password);
-    } catch (Exception $error) {
+        $connection = new PDO($dsn, $_ENV['DB_USER'], $_ENV['DB_PASS']);
+        $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    } catch (PDOException $error) {
         echo "<h3>Connection failed: " . $error->getMessage() . "</h3>";
+        die();
     }
     return $connection;
 }
-
 function generate($base = "page/baseIndex.html.php")
 {
     if (file_exists($base)) {

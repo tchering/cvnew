@@ -1,6 +1,12 @@
 <?php
 include("service/function.php");
 
+require("vendor/autoload.php");
+
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+$dotenv->load();
+
+
 $action = $_GET['action'] ?? '';
 
 switch ($action) {
